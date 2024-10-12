@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pug Image</title>
+    <script>
+        function sendEmail(e) {
+            e.preventDefault();
+            var name = document.getElementById('name').value;
+            var message = document.getElementById('message').value;
+            var body = 'Name: ' + name + '\n' + '\nMessage: ' + message;
+            window.location.href = 'mailto:kacpermartela+hammy@gmail.com?body=' + encodeURIComponent(body);
+        }
+    </script>
+</head>
+<body>
+<h1>Hammy the Pug</h1>
+<img src="hammy.jpeg" alt="Pug Image">
+<h2>Send a message to Hammy</h2>
+<form onsubmit="sendEmail(event)">
+    <label for="name">Your Name:</label><br>
+    <input type="text" id="name" name="name"><br>
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message"></textarea><br>
+    <input type="submit" value="Send">
+</form>
+</body>
+</html>
